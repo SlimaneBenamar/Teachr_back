@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Teachr{% endblock %}
+
+{% block body %}
+    <h1>Teachr</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ teachr.id }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ teachr.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Date_creation</th>
+                <td>{{ teachr.dateCreation ? teachr.dateCreation|date('Y-m-d') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('teachr_index') }}">back to list</a>
+
+    <a href="{{ path('teachr_edit', {'id': teachr.id}) }}">edit</a>
+
+    {{ include('teachr/_delete_form.html.twig') }}
+{% endblock %}

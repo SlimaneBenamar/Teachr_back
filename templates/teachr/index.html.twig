@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Teachr index{% endblock %}
+
+{% block body %}
+    <h1>Teachr index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Prenom</th>
+                <th>Date_creation</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for teachr in teachrs %}
+            <tr>
+                <td>{{ teachr.id }}</td>
+                <td>{{ teachr.prenom }}</td>
+                <td>{{ teachr.dateCreation ? teachr.dateCreation|date('Y-m-d') : '' }}</td>
+                <td>
+                    <a href="{{ path('teachr_show', {'id': teachr.id}) }}">show</a>
+                    <a href="{{ path('teachr_edit', {'id': teachr.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('teachr_new') }}">Create new</a>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Teachr{% endblock %}
+
+{% block body %}
+    <h1>Create new Teachr</h1>
+
+    {{ include('teachr/_form.html.twig') }}
+
+    <a href="{{ path('teachr_index') }}">back to list</a>
+{% endblock %}

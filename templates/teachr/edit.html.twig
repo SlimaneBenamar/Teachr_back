@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Teachr{% endblock %}
+
+{% block body %}
+    <h1>Edit Teachr</h1>
+
+    {{ include('teachr/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('teachr_index') }}">back to list</a>
+
+    {{ include('teachr/_delete_form.html.twig') }}
+{% endblock %}
