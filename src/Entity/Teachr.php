@@ -57,4 +57,12 @@ class Teachr
 
         return $this;
     }
+
+    public function toArray() {
+    return [
+        'id' => $this->getId(),
+        'prenom' => $this->getPrenom(),
+        'date_creation' => $this->getDateCreation()
+    ];
+  }
 }
